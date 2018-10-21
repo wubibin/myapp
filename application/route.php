@@ -9,13 +9,20 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
-return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
+// return [
+//     '__pattern__' => [
+//         'name' => '\w+',
+//     ],
+//     '[hello]'     => [
+//         ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
+//         ':name' => ['index/hello', ['method' => 'post']],
+//     ],
+//
+// ];
+//
+use think\Route;
 
-];
+// api.tp5.com ===> www.tp5.com/index.php/api
+Route::domain('api','api');
+// api.tp5.com/user/2 ===> www.tp5.com/index.php/api/user/index/id/2
+Route::rule('user/:id','member/login');
