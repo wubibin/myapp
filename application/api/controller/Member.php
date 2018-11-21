@@ -6,6 +6,6 @@ class Member extends CommonController
 {
     public function login()
     {
-
+        echo 'aa';
     }
 }
